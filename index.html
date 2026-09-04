@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demeshwar Rana — ML Engineer</title>
+<meta name="description" content="Demeshwar Rana — Aspiring Data Scientist / ML Engineer. Deep learning projects in computer vision and time series forecasting.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0e14;
+    --bg-elevated:#10151f;
+    --bg-card:#131926;
+    --border:#232b3a;
+    --text:#e8ecf3;
+    --text-dim:#8b96ab;
+    --text-faint:#5b6579;
+    --accent:#5eead4;
+    --accent-dim:#2dd4bf;
+    --accent-glow:rgba(94,234,212,0.15);
+    --gradient:linear-gradient(135deg,#5eead4 0%,#818cf8 100%);
+    --radius:14px;
+    --maxw:920px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .bg-glow{
+    position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(600px circle at 15% 10%, var(--accent-glow), transparent 60%),
+      radial-gradient(500px circle at 85% 30%, rgba(129,140,248,0.1), transparent 60%);
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;position:relative;z-index:1}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;letter-spacing:-0.02em}
+
+  /* nav */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(10,14,20,0.75);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text);text-decoration:none}
+  .logo span{color:var(--accent)}
+  .navlinks{display:flex;gap:28px;list-style:none}
+  .navlinks a{color:var(--text-dim);text-decoration:none;font-size:0.92rem;font-weight:500;transition:color .2s}
+  .navlinks a:hover{color:var(--accent)}
+
+  /* hero */
+  .hero{padding:120px 0 90px;text-align:left}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:0.82rem;color:var(--accent);font-weight:500;
+    background:var(--accent-glow);border:1px solid rgba(94,234,212,0.25);
+    padding:6px 14px;border-radius:999px;margin-bottom:24px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
+  .hero h1{font-size:clamp(2.2rem,5.5vw,3.6rem);font-weight:700;line-height:1.08;margin-bottom:18px}
+  .hero h1 .grad{background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{font-size:1.15rem;color:var(--text-dim);max-width:600px;margin-bottom:34px}
+  .btn-row{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 22px;border-radius:10px;font-weight:600;font-size:0.94rem;
+    text-decoration:none;transition:transform .15s, box-shadow .15s, background .15s;
+    border:1px solid transparent;
+  }
+  .btn-primary{background:var(--gradient);color:#08131a}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px var(--accent-glow)}
+  .btn-secondary{background:var(--bg-card);color:var(--text);border-color:var(--border)}
+  .btn-secondary:hover{border-color:var(--accent-dim);color:var(--accent)}
+
+  section{padding:70px 0}
+  .section-head{margin-bottom:38px}
+  .tag{color:var(--accent);font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;display:block}
+  .section-head h2{font-size:1.9rem;font-weight:600}
+
+  /* about */
+  .about-text{color:var(--text-dim);font-size:1.02rem;max-width:680px}
+  .about-text p + p{margin-top:14px}
+
+  /* skills */
+  .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+  .skill-card{
+    background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+    padding:22px;transition:border-color .2s, transform .2s;
+  }
+  .skill-card:hover{border-color:var(--accent-dim);transform:translateY(-3px)}
+  .skill-card h3{font-size:0.95rem;color:var(--accent);margin-bottom:10px;font-weight:600}
+  .skill-card ul{list-style:none;color:var(--text-dim);font-size:0.9rem}
+  .skill-card li{padding:3px 0}
+
+  /* projects */
+  .project{
+    background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+    padding:28px;margin-bottom:22px;transition:border-color .2s, transform .2s;
+  }
+  .project:hover{border-color:var(--accent-dim);transform:translateY(-3px)}
+  .project-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:12px;flex-wrap:wrap}
+  .project-head h3{font-size:1.2rem;font-weight:600}
+  .project-link{
+    font-size:0.85rem;color:var(--accent);text-decoration:none;font-weight:600;
+    display:inline-flex;align-items:center;gap:4px;white-space:nowrap;
+  }
+  .project-link:hover{text-decoration:underline}
+  .project p.desc{color:var(--text-dim);font-size:0.96rem;margin-bottom:16px}
+  .stat-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+  .stat{
+    background:rgba(94,234,212,0.08);border:1px solid rgba(94,234,212,0.2);
+    border-radius:8px;padding:8px 14px;font-size:0.85rem;
+  }
+  .stat b{color:var(--accent);font-family:'Space Grotesk',sans-serif}
+  .chip-row{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{
+    font-size:0.78rem;color:var(--text-faint);background:var(--bg-elevated);
+    border:1px solid var(--border);border-radius:6px;padding:4px 10px;
+  }
+
+  /* contact */
+  .contact-box{
+    background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+    padding:40px;text-align:center;
+  }
+  .contact-box h2{font-size:1.6rem;margin-bottom:10px}
+  .contact-box p{color:var(--text-dim);margin-bottom:26px}
+
+  footer{padding:36px 0;border-top:1px solid var(--border);text-align:center}
+  footer p{color:var(--text-faint);font-size:0.85rem}
+
+  @media(max-width:640px){
+    .navlinks{gap:16px}
+    .navlinks a{font-size:0.85rem}
+    .hero{padding:80px 0 60px}
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-glow"></div>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo">Demeshwar<span>.</span></a>
+    <ul class="navlinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span> Open to opportunities</span>
+    <h1>Demeshwar Rana<br><span class="grad">Aspiring Data Scientist / ML Engineer</span></h1>
+    <p>Learning neural networks and deep learning from the ground up — building end-to-end pipelines with TensorFlow/Keras, from CNNs and transfer learning to RNN-based time series forecasting.</p>
+    <div class="btn-row">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="https://github.com/DemeshwarRana" class="btn btn-secondary" target="_blank" rel="noopener">GitHub Profile</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">About</span>
+      <h2>What I'm working on</h2>
+    </div>
+    <div class="about-text">
+      <p>I'm building a structured progression through deep learning: starting from fundamentals — perceptrons and CNNs built entirely from scratch — through proper regularization and training practices, into transfer learning with pretrained models, and time series forecasting with RNNs and LSTMs.</p>
+      <p>Every project is built as a fully explained, step-by-step pipeline rather than a black box — I care as much about understanding *why* a technique works as getting the result.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Skills</span>
+      <h2>Tools & technologies</h2>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-card">
+        <h3>Languages & Core</h3>
+        <ul><li>Python</li><li>NumPy</li><li>Pandas</li></ul>
+      </div>
+      <div class="skill-card">
+        <h3>Deep Learning</h3>
+        <ul><li>TensorFlow / Keras</li><li>CNNs</li><li>RNNs / GRU / LSTM</li><li>Transfer Learning (EfficientNet)</li></ul>
+      </div>
+      <div class="skill-card">
+        <h3>ML Tooling</h3>
+        <ul><li>scikit-learn</li><li>Plotly</li><li>Matplotlib</li></ul>
+      </div>
+      <div class="skill-card">
+        <h3>Workflow</h3>
+        <ul><li>Jupyter</li><li>Experiment tracking</li><li>Model evaluation</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Projects</span>
+      <h2>Featured work</h2>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3>Image Classification Pipeline</h3>
+        <a class="project-link" href="https://github.com/DemeshwarRana/image-classification-pipeline" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+      <p class="desc">A step-by-step CNN image classification pipeline built with TensorFlow/Keras — progressing from fundamentals to transfer learning.</p>
+      <div class="stat-row">
+        <div class="stat">MNIST: <b>~99%</b></div>
+        <div class="stat">CIFAR-10 (from scratch): <b>~73.5%</b></div>
+        <div class="stat">EfficientNet transfer learning: <b>~83%</b></div>
+      </div>
+      <div class="chip-row">
+        <span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">CNN</span>
+        <span class="chip">EfficientNetB0</span><span class="chip">Transfer Learning</span>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3>Weather Time Series Forecasting</h3>
+        <a class="project-link" href="https://github.com/DemeshwarRana/Weather-time-series" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+      <p class="desc">RNN-based forecasting of hourly traffic volume using weather and holiday features, comparing SimpleRNN, GRU, and LSTM architectures.</p>
+      <div class="stat-row">
+        <div class="stat">Final LSTM R²: <b>0.981</b></div>
+        <div class="stat">Naive baseline R²: <b>0.830</b></div>
+        <div class="stat">Leakage check: <b>passed</b></div>
+      </div>
+      <div class="chip-row">
+        <span class="chip">TensorFlow</span><span class="chip">LSTM / GRU</span><span class="chip">Time Series</span>
+        <span class="chip">scikit-learn</span><span class="chip">Plotly</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <h2>Let's connect</h2>
+      <p>Open to opportunities, collaboration, or just talking about machine learning.</p>
+      <div class="btn-row" style="justify-content:center">
+        <a href="mailto:demeshwarrana187@gmail.com" class="btn btn-primary">Email Me</a>
+        <a href="https://www.linkedin.com/in/demeshwarrana" class="btn btn-secondary" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/DemeshwarRana" class="btn btn-secondary" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Demeshwar Rana. Built with HTML/CSS, hosted on GitHub Pages.</p>
+  </div>
+</footer>
+
+</body>
+</html>
