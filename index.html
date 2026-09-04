@@ -3,26 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Demeshwar Rana — ML Engineer</title>
-<meta name="description" content="Demeshwar Rana — Aspiring Data Scientist / ML Engineer. Deep learning projects in computer vision and time series forecasting.">
+<title>Demeshwar Rana — Data Scientist & Data Engineer</title>
+<meta name="description" content="Demeshwar Rana — Data Scientist / Data Engineer / Werkstudent Candidate. MSc AI, Data Science & Digital Business student in Berlin, Germany.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑‍💻</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0a0e14;
-    --bg-elevated:#10151f;
-    --bg-card:#131926;
-    --border:#232b3a;
-    --text:#e8ecf3;
-    --text-dim:#8b96ab;
-    --text-faint:#5b6579;
-    --accent:#5eead4;
-    --accent-dim:#2dd4bf;
-    --accent-glow:rgba(94,234,212,0.15);
-    --gradient:linear-gradient(135deg,#5eead4 0%,#818cf8 100%);
-    --radius:14px;
-    --maxw:920px;
+    --bg:#0b0f16;
+    --bg-elevated:#0f141d;
+    --bg-card:#121826;
+    --border:#212938;
+    --border-soft:#1a2130;
+    --text:#eef1f6;
+    --text-dim:#98a2b5;
+    --text-faint:#616d82;
+    --accent:#2dd4bf;
+    --accent-soft:rgba(45,212,191,0.12);
+    --radius:12px;
+    --maxw:900px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -30,190 +30,270 @@
     background:var(--bg);
     color:var(--text);
     font-family:'Inter',system-ui,-apple-system,sans-serif;
-    line-height:1.6;
+    line-height:1.65;
     -webkit-font-smoothing:antialiased;
+    font-size:15.5px;
   }
-  .bg-glow{
-    position:fixed;inset:0;z-index:0;pointer-events:none;
-    background:
-      radial-gradient(600px circle at 15% 10%, var(--accent-glow), transparent 60%),
-      radial-gradient(500px circle at 85% 30%, rgba(129,140,248,0.1), transparent 60%);
-  }
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;position:relative;z-index:1}
-  h1,h2,h3{font-family:'Space Grotesk',sans-serif;letter-spacing:-0.02em}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;letter-spacing:-0.01em}
+  a{color:inherit}
 
   /* nav */
   nav{
     position:sticky;top:0;z-index:50;
-    background:rgba(10,14,20,0.75);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--border);
+    background:rgba(11,15,22,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border-soft);
   }
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text);text-decoration:none}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;color:var(--text);text-decoration:none}
   .logo span{color:var(--accent)}
-  .navlinks{display:flex;gap:28px;list-style:none}
-  .navlinks a{color:var(--text-dim);text-decoration:none;font-size:0.92rem;font-weight:500;transition:color .2s}
+  .navlinks{display:flex;gap:26px;list-style:none;align-items:center}
+  .navlinks a{color:var(--text-dim);text-decoration:none;font-size:0.88rem;font-weight:500;transition:color .2s}
   .navlinks a:hover{color:var(--accent)}
+  .nav-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.4rem;cursor:pointer}
 
   /* hero */
-  .hero{padding:120px 0 90px;text-align:left}
-  .eyebrow{
-    display:inline-flex;align-items:center;gap:8px;
-    font-size:0.82rem;color:var(--accent);font-weight:500;
-    background:var(--accent-glow);border:1px solid rgba(94,234,212,0.25);
-    padding:6px 14px;border-radius:999px;margin-bottom:24px;
-  }
-  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
-  .hero h1{font-size:clamp(2.2rem,5.5vw,3.6rem);font-weight:700;line-height:1.08;margin-bottom:18px}
-  .hero h1 .grad{background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hero p{font-size:1.15rem;color:var(--text-dim);max-width:600px;margin-bottom:34px}
-  .btn-row{display:flex;gap:14px;flex-wrap:wrap}
+  .hero{padding:100px 0 72px}
+  .location{color:var(--text-faint);font-size:0.86rem;margin-bottom:18px;display:flex;align-items:center;gap:6px}
+  .hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:700;line-height:1.15;margin-bottom:10px}
+  .hero .role{color:var(--accent);font-size:1.05rem;font-weight:600;margin-bottom:22px}
+  .hero p{color:var(--text-dim);max-width:640px;margin-bottom:30px;font-size:1rem}
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
-    padding:12px 22px;border-radius:10px;font-weight:600;font-size:0.94rem;
-    text-decoration:none;transition:transform .15s, box-shadow .15s, background .15s;
-    border:1px solid transparent;
+    padding:11px 20px;border-radius:9px;font-weight:600;font-size:0.88rem;
+    text-decoration:none;transition:all .18s;border:1px solid transparent;
   }
-  .btn-primary{background:var(--gradient);color:#08131a}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px var(--accent-glow)}
+  .btn-primary{background:var(--accent);color:#06231f}
+  .btn-primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
   .btn-secondary{background:var(--bg-card);color:var(--text);border-color:var(--border)}
-  .btn-secondary:hover{border-color:var(--accent-dim);color:var(--accent)}
+  .btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
 
-  section{padding:70px 0}
-  .section-head{margin-bottom:38px}
-  .tag{color:var(--accent);font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;display:block}
-  .section-head h2{font-size:1.9rem;font-weight:600}
+  section{padding:56px 0;border-top:1px solid var(--border-soft)}
+  .hero{border-top:none}
+  .section-head{margin-bottom:32px}
+  .tag{color:var(--accent);font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;display:block}
+  .section-head h2{font-size:1.6rem;font-weight:600}
+
+  .fade{opacity:0;transform:translateY(14px);transition:opacity .5s ease, transform .5s ease}
+  .fade.in{opacity:1;transform:none}
 
   /* about */
-  .about-text{color:var(--text-dim);font-size:1.02rem;max-width:680px}
-  .about-text p + p{margin-top:14px}
+  .about-text{color:var(--text-dim);max-width:680px}
+
+  /* timeline (experience/education) */
+  .entry{
+    display:grid;grid-template-columns:150px 1fr;gap:20px;
+    padding:20px 0;border-bottom:1px solid var(--border-soft);
+  }
+  .entry:last-child{border-bottom:none}
+  .entry .when{color:var(--text-faint);font-size:0.82rem;padding-top:2px}
+  .entry h3{font-size:1.02rem;font-weight:600;margin-bottom:2px}
+  .entry .org{color:var(--accent);font-size:0.88rem;font-weight:500;margin-bottom:8px}
+  .entry ul{padding-left:18px;color:var(--text-dim);font-size:0.92rem}
+  .entry li{margin-bottom:4px}
+  @media(max-width:600px){
+    .entry{grid-template-columns:1fr;gap:4px}
+  }
 
   /* skills */
-  .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+  .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
   .skill-card{
     background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
-    padding:22px;transition:border-color .2s, transform .2s;
+    padding:20px;
   }
-  .skill-card:hover{border-color:var(--accent-dim);transform:translateY(-3px)}
-  .skill-card h3{font-size:0.95rem;color:var(--accent);margin-bottom:10px;font-weight:600}
-  .skill-card ul{list-style:none;color:var(--text-dim);font-size:0.9rem}
-  .skill-card li{padding:3px 0}
+  .skill-card h3{font-size:0.82rem;color:var(--accent);margin-bottom:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em}
+  .skill-card p{color:var(--text-dim);font-size:0.9rem;line-height:1.55}
 
   /* projects */
   .project{
     background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
-    padding:28px;margin-bottom:22px;transition:border-color .2s, transform .2s;
+    padding:24px;margin-bottom:16px;transition:border-color .2s;
   }
-  .project:hover{border-color:var(--accent-dim);transform:translateY(-3px)}
-  .project-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:12px;flex-wrap:wrap}
-  .project-head h3{font-size:1.2rem;font-weight:600}
+  .project:hover{border-color:#2f3a4e}
+  .project-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:8px;flex-wrap:wrap}
+  .project-head h3{font-size:1.08rem;font-weight:600}
   .project-link{
-    font-size:0.85rem;color:var(--accent);text-decoration:none;font-weight:600;
-    display:inline-flex;align-items:center;gap:4px;white-space:nowrap;
+    font-size:0.82rem;color:var(--accent);text-decoration:none;font-weight:600;white-space:nowrap;
   }
   .project-link:hover{text-decoration:underline}
-  .project p.desc{color:var(--text-dim);font-size:0.96rem;margin-bottom:16px}
-  .stat-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+  .project p.desc{color:var(--text-dim);font-size:0.92rem;margin-bottom:14px}
+  .stat-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
   .stat{
-    background:rgba(94,234,212,0.08);border:1px solid rgba(94,234,212,0.2);
-    border-radius:8px;padding:8px 14px;font-size:0.85rem;
+    background:var(--accent-soft);border:1px solid rgba(45,212,191,0.22);
+    border-radius:7px;padding:6px 12px;font-size:0.8rem;color:var(--text-dim);
   }
   .stat b{color:var(--accent);font-family:'Space Grotesk',sans-serif}
-  .chip-row{display:flex;gap:8px;flex-wrap:wrap}
+  .chip-row{display:flex;gap:7px;flex-wrap:wrap}
   .chip{
-    font-size:0.78rem;color:var(--text-faint);background:var(--bg-elevated);
-    border:1px solid var(--border);border-radius:6px;padding:4px 10px;
+    font-size:0.74rem;color:var(--text-faint);background:var(--bg-elevated);
+    border:1px solid var(--border);border-radius:6px;padding:3px 9px;
   }
+
+  /* languages/activities */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .two-col h3{font-size:0.82rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:10px}
+  .two-col p{color:var(--text-dim);font-size:0.92rem}
+  @media(max-width:600px){.two-col{grid-template-columns:1fr}}
 
   /* contact */
   .contact-box{
     background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
-    padding:40px;text-align:center;
+    padding:36px;text-align:center;
   }
-  .contact-box h2{font-size:1.6rem;margin-bottom:10px}
-  .contact-box p{color:var(--text-dim);margin-bottom:26px}
+  .contact-box h2{font-size:1.4rem;margin-bottom:8px}
+  .contact-box p{color:var(--text-dim);margin-bottom:22px;font-size:0.94rem}
 
-  footer{padding:36px 0;border-top:1px solid var(--border);text-align:center}
-  footer p{color:var(--text-faint);font-size:0.85rem}
+  footer{padding:30px 0;border-top:1px solid var(--border-soft);text-align:center}
+  footer p{color:var(--text-faint);font-size:0.82rem}
 
   @media(max-width:640px){
-    .navlinks{gap:16px}
-    .navlinks a{font-size:0.85rem}
-    .hero{padding:80px 0 60px}
+    .navlinks{
+      position:fixed;top:60px;left:0;right:0;
+      background:var(--bg-elevated);border-bottom:1px solid var(--border);
+      flex-direction:column;align-items:flex-start;padding:18px 24px;gap:16px;
+      transform:translateY(-8px);opacity:0;pointer-events:none;transition:all .2s;
+    }
+    .navlinks.open{transform:none;opacity:1;pointer-events:auto}
+    .nav-toggle{display:block}
+    .hero{padding:70px 0 50px}
   }
 </style>
 </head>
 <body>
 
-<div class="bg-glow"></div>
-
 <nav>
   <div class="wrap">
     <a href="#" class="logo">Demeshwar<span>.</span></a>
-    <ul class="navlinks">
+    <ul class="navlinks" id="navlinks">
       <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
-    <span class="eyebrow"><span class="dot"></span> Open to opportunities</span>
-    <h1>Demeshwar Rana<br><span class="grad">Aspiring Data Scientist / ML Engineer</span></h1>
-    <p>Learning neural networks and deep learning from the ground up — building end-to-end pipelines with TensorFlow/Keras, from CNNs and transfer learning to RNN-based time series forecasting.</p>
+    <div class="location">📍 Berlin, Germany</div>
+    <h1>Demeshwar Rana</h1>
+    <div class="role">Data Scientist · Data Engineer · Werkstudent Candidate</div>
+    <p>MSc Data Science &amp; AI student at Gisma University (Potsdam) with practical experience delivering end-to-end ML solutions — from pipeline design to interactive deployment. Eligible for Werkstudent roles in Germany (up to 20 hrs/week).</p>
     <div class="btn-row">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="https://github.com/DemeshwarRana" class="btn btn-secondary" target="_blank" rel="noopener">GitHub Profile</a>
+      <a href="assets/Demeshwar_Rana_Resume.pdf" class="btn btn-primary" download>Download Resume</a>
+      <a href="mailto:demeshwarrana187@gmail.com" class="btn btn-secondary">Email Me</a>
+      <a href="https://www.linkedin.com/in/demeshwarrana" class="btn btn-secondary" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/DemeshwarRana" class="btn btn-secondary" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 </header>
 
 <section id="about">
-  <div class="wrap">
+  <div class="wrap fade">
     <div class="section-head">
       <span class="tag">About</span>
-      <h2>What I'm working on</h2>
+      <h2>Professional summary</h2>
     </div>
     <div class="about-text">
-      <p>I'm building a structured progression through deep learning: starting from fundamentals — perceptrons and CNNs built entirely from scratch — through proper regularization and training practices, into transfer learning with pretrained models, and time series forecasting with RNNs and LSTMs.</p>
-      <p>Every project is built as a fully explained, step-by-step pipeline rather than a black box — I care as much about understanding *why* a technique works as getting the result.</p>
+      <p>Built predictive models using Python, scikit-learn, and XGBoost, and deployed real-time dashboards via Streamlit for healthcare and automotive use cases. An internship at IIT Mandi's Centre of AI and Robotics sharpened skills in applied data analysis and cross-functional collaboration. Currently deepening deep learning expertise — CNNs, RNNs/LSTMs, and transfer learning — through fully self-built, from-scratch pipelines. Eager to contribute in a Werkstudent role in Data Science or Data Engineering, bringing analytical rigour, a fast-learning mindset, and a genuine passion for turning data into decisions.</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap fade">
+    <div class="section-head">
+      <span class="tag">Experience</span>
+      <h2>Work experience</h2>
+    </div>
+    <div class="entry">
+      <div class="when">Jan 2024 – May 2024</div>
+      <div>
+        <h3>Robotics &amp; Data Intern</h3>
+        <div class="org">Centre of AI and Robotics — IIT Mandi, India</div>
+        <ul>
+          <li>Designed and validated a full 3D quadruped robot model in SolidWorks; ran motion and stress analysis to resolve structural weak points before fabrication</li>
+          <li>Engineered a complete cleaning assembly for a ship hull robot using mechanism inversion to achieve precise 45° brush oscillations; modelled all custom parts in SolidWorks</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap fade">
+    <div class="section-head">
+      <span class="tag">Education</span>
+      <h2>Academic background</h2>
+    </div>
+    <div class="entry">
+      <div class="when">Dec 2025 – Dec 2027 (expected)</div>
+      <div>
+        <h3>M.Sc. in AI, Data Science &amp; Digital Business</h3>
+        <div class="org">Gisma University of Applied Science, Potsdam, Germany</div>
+        <ul><li>Key modules: Machine Learning, Business Analytics, Data-Driven Decision Making, Digital Business Strategy</li></ul>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="when">Aug 2021 – Jun 2024</div>
+      <div>
+        <h3>B.Tech in Mechanical Engineering</h3>
+        <div class="org">Jawaharlal Nehru Government Engineering College, Sundernagar, India</div>
+        <ul><li>Strong grounding in analytical thinking, systems design, and quantitative problem-solving</li></ul>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="when">2018 – 2021</div>
+      <div>
+        <h3>Diploma in Mechanical Engineering</h3>
+        <div class="org">Government Polytechnic College, Sundernagar, India</div>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="skills">
-  <div class="wrap">
+  <div class="wrap fade">
     <div class="section-head">
       <span class="tag">Skills</span>
-      <h2>Tools & technologies</h2>
+      <h2>Tools &amp; technologies</h2>
     </div>
     <div class="skill-grid">
       <div class="skill-card">
-        <h3>Languages & Core</h3>
-        <ul><li>Python</li><li>NumPy</li><li>Pandas</li></ul>
+        <h3>Languages</h3>
+        <p>Python, SQL (basic — actively improving)</p>
       </div>
       <div class="skill-card">
-        <h3>Deep Learning</h3>
-        <ul><li>TensorFlow / Keras</li><li>CNNs</li><li>RNNs / GRU / LSTM</li><li>Transfer Learning (EfficientNet)</li></ul>
+        <h3>ML / AI</h3>
+        <p>scikit-learn, XGBoost, Random Forest, Regression Analysis, TensorFlow/Keras, CNNs, RNNs/GRU/LSTM, Transfer Learning</p>
       </div>
       <div class="skill-card">
-        <h3>ML Tooling</h3>
-        <ul><li>scikit-learn</li><li>Plotly</li><li>Matplotlib</li></ul>
+        <h3>Data Processing</h3>
+        <p>Pandas, NumPy</p>
       </div>
       <div class="skill-card">
-        <h3>Workflow</h3>
-        <ul><li>Jupyter</li><li>Experiment tracking</li><li>Model evaluation</li></ul>
+        <h3>Visualisation</h3>
+        <p>Plotly, Matplotlib, Seaborn</p>
+      </div>
+      <div class="skill-card">
+        <h3>Deployment &amp; Tools</h3>
+        <p>Streamlit, GitHub, Jupyter Notebook</p>
+      </div>
+      <div class="skill-card">
+        <h3>Engineering</h3>
+        <p>SolidWorks (3D Modelling, Motion &amp; Stress Analysis)</p>
       </div>
     </div>
   </div>
 </section>
 
 <section id="projects">
-  <div class="wrap">
+  <div class="wrap fade">
     <div class="section-head">
       <span class="tag">Projects</span>
       <h2>Featured work</h2>
@@ -224,7 +304,7 @@
         <h3>Image Classification Pipeline</h3>
         <a class="project-link" href="https://github.com/DemeshwarRana/image-classification-pipeline" target="_blank" rel="noopener">View on GitHub →</a>
       </div>
-      <p class="desc">A step-by-step CNN image classification pipeline built with TensorFlow/Keras — progressing from fundamentals to transfer learning.</p>
+      <p class="desc">Step-by-step CNN image classification pipeline built with TensorFlow/Keras — progressing from fundamentals to transfer learning.</p>
       <div class="stat-row">
         <div class="stat">MNIST: <b>~99%</b></div>
         <div class="stat">CIFAR-10 (from scratch): <b>~73.5%</b></div>
@@ -253,14 +333,53 @@
       </div>
     </div>
 
+    <div class="project">
+      <div class="project-head">
+        <h3>Strategic Paediatric Bed Demand Forecast</h3>
+      </div>
+      <p class="desc">Forecast paediatric bed demand in North Delhi using real-time AQI data; automated a 48-hour operational guidance pipeline and deployed a live Streamlit dashboard for resource allocation.</p>
+      <div class="chip-row">
+        <span class="chip">Python</span><span class="chip">XGBoost</span><span class="chip">Streamlit</span><span class="chip">Pandas</span>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3>Market Performance &amp; EV Transition Analysis — BMW Group</h3>
+      </div>
+      <p class="desc">Analysed BMW's EV strategy across sales, battery, and manufacturing data; built interactive Plotly visualisations for stakeholder storytelling on long-term market competitiveness.</p>
+      <div class="chip-row">
+        <span class="chip">Python</span><span class="chip">Plotly</span><span class="chip">Pandas</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="languages">
+  <div class="wrap fade">
+    <div class="section-head">
+      <span class="tag">Additional</span>
+      <h2>Languages &amp; activities</h2>
+    </div>
+    <div class="two-col">
+      <div>
+        <h3>Languages</h3>
+        <p>Hindi (Native) · English B2 · German A2 (actively improving)</p>
+      </div>
+      <div>
+        <h3>Activities</h3>
+        <p>Peer mentor in Data Visualisation · Sales Executive (customer engagement) · Community outreach volunteer</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="contact">
-  <div class="wrap">
+  <div class="wrap fade">
     <div class="contact-box">
       <h2>Let's connect</h2>
-      <p>Open to opportunities, collaboration, or just talking about machine learning.</p>
+      <p>Open to Werkstudent opportunities in Data Science / Data Engineering, collaboration, or just talking about machine learning.</p>
       <div class="btn-row" style="justify-content:center">
         <a href="mailto:demeshwarrana187@gmail.com" class="btn btn-primary">Email Me</a>
         <a href="https://www.linkedin.com/in/demeshwarrana" class="btn btn-secondary" target="_blank" rel="noopener">LinkedIn</a>
@@ -272,9 +391,23 @@
 
 <footer>
   <div class="wrap">
-    <p>&copy; 2026 Demeshwar Rana. Built with HTML/CSS, hosted on GitHub Pages.</p>
+    <p>&copy; 2026 Demeshwar Rana · Berlin, Germany · Built with HTML/CSS, hosted on GitHub Pages</p>
   </div>
 </footer>
+
+<script>
+  // mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navlinks = document.getElementById('navlinks');
+  navToggle.addEventListener('click', () => navlinks.classList.toggle('open'));
+  navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navlinks.classList.remove('open')));
+
+  // scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
