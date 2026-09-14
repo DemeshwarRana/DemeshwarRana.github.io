@@ -301,14 +301,30 @@
 
     <div class="project">
       <div class="project-head">
+        <h3>National Grid Demand Forecasting</h3>
+        <a class="project-link" href="https://github.com/DemeshwarRana/National-Grid-Demand-Forecasting" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+      <p class="desc">Day-ahead electricity demand forecasting for Great Britain's national grid using recurrent neural networks, with a strong emphasis on validating the data and the evaluation before trusting the results.</p>
+      <div class="stat-row">
+        <div class="stat">Final GRU R²: <b>0.869</b></div>
+        <div class="stat">Naive baseline R²: <b>0.790</b></div>
+        <div class="stat">Test MAE: <b>1,708 MW</b></div>
+      </div>
+      <div class="chip-row">
+        <span class="chip">TensorFlow</span><span class="chip">GRU / LSTM</span><span class="chip">Time Series</span>
+        <span class="chip">scikit-learn</span><span class="chip">Plotly</span>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
         <h3>Image Classification Pipeline</h3>
         <a class="project-link" href="https://github.com/DemeshwarRana/image-classification-pipeline" target="_blank" rel="noopener">View on GitHub →</a>
       </div>
-      <p class="desc">Step-by-step CNN image classification pipeline built with TensorFlow/Keras — progressing from fundamentals to transfer learning.</p>
+      <p class="desc">Step-by-step CNN image classification pipeline built with TensorFlow/Keras — progressing from fundamentals to transfer learning, with EfficientNetB0 fine-tuning improving meaningfully on a from-scratch CNN baseline while cutting training time.</p>
       <div class="stat-row">
-        <div class="stat">MNIST: <b>~99%</b></div>
-        <div class="stat">CIFAR-10 (from scratch): <b>~73.5%</b></div>
-        <div class="stat">EfficientNet transfer learning: <b>~83%</b></div>
+        <div class="stat">Regularisation: <b>Dropout · BatchNorm · Augmentation</b></div>
+        <div class="stat">Approach: <b>Frozen-base → fine-tune</b></div>
       </div>
       <div class="chip-row">
         <span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">CNN</span>
